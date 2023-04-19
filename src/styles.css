@@ -1,4 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: dotted;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background-color:rgb(73, 5, 5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    
+}
+.logo{
+    font-size: 28px;
+    font-style: inherit;
+    font-weight: bold;
+    color: aliceblue;
+}
+.hamburger{
+    display: none;
+
+}
+.fixed ul{
+    display: flex;
+}
+.fixed ul li a{
+    display: block;
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+
+}
+.fixed li a:hover{
+color: black;
+background: beige;
+}
+
+.fixed li a.active{
+    color: black;
+    background: beige;
+}
+
+@media only screen and (max-width:1320px){
+    header{
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width:1100px){
+    header{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width:900px){
+    .hamburger{
+        display:block;
+        cursor: pointer;
+    }
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background: beige;
+        margin:6px 0;
+    }
+    .fixed{
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left:0;
+        right: 0;
+        width: 100vw;
+        background: black;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .fixed.active{
+        height: 450px;
+    }
+    .fixed ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .fixed ul li a{
+        margin-bottom: 15px;
+    }
+
+    .fixed.active ul{
+opacity: 1;
+
+    }
+    
+}
+p{
+    font-size: 5.em;
+    color: bisque;
+}
